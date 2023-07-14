@@ -4,7 +4,7 @@ const servicosSchema = mongoose.Schema(
     {
         tipo:{type:String,required:true},
         valor:{type:Number , required:true},
-        data:{type:Date}
+        data:new Date()
     },
     { _id: false }
 );
