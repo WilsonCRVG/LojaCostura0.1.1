@@ -9,7 +9,7 @@ configDotenv.config();
 //CONXAO BANCO
 db.on("error",console.log.bind(console,"error ao conectar"))
 db.once("open",()=>{
-    console.log('Conexão feita com Sucesso')
+    console.log('Conexão com o Banco feita com Sucesso')
 })
 
 //server 

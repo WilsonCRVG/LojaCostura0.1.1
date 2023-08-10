@@ -1,12 +1,16 @@
 import mongoose from "mongoose";
 
 const servicosSchema = mongoose.Schema(
-    {
-        tipo:{type:String,required:true},
+    {   
+        id:{type:String},
+        cliente:{type: mongoose.Schema.Types.ObjectId,ref:'clientes',required:true},
+        tipo:{type:String, required:true},
         valor:{type:Number , required:true},
-        data:new Date()
+        dataInicio:{type:Date}
     },
-    { _id: false }
+    { 
+        versionKey: false
+    } 
 );
 
 const servicos = mongoose.model('servicos',servicosSchema);
