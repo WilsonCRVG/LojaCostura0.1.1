@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { DataFormatada } from "../config/dateConfig.js";
 
 const servicosSchema = mongoose.Schema(
     {   
@@ -6,11 +7,12 @@ const servicosSchema = mongoose.Schema(
         cliente:{type: mongoose.Schema.Types.ObjectId,ref:'clientes',required:true},
         tipo:{type:String, required:true},
         valor:{type:Number , required:true},
-        dataInicio:{type:Date}
+        dataInicio:{type:Date , default:Date.now},
+        dataEntrega:{type:Date, require:true}
     },
     { 
         versionKey: false
-    } 
+    }
 );
 
 const servicos = mongoose.model('servicos',servicosSchema);

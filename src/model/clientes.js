@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const clientesSchema = new mongoose.Schema(
     {
         nome:{type:String , required:true},  
-        _id:{type:String,required:true},
+        id:{type:String},
         telefone:{type:String,required:true}
     },
     { 

@@ -11,6 +11,28 @@ class ClientesController{
       res.status(500).json(error);
     }
   } 
+
+  //Listar por ID
+
+  static lisatarPorId =  async (req,res)=>{
+    try{
+        const id = req.params.id;
+
+        const cliente = await clientes.findById(id)
+        
+        if (!cliente) {
+          res.status(404).send({message: "Id do cliente não Localizado"})
+        } else {
+          res.status(200).send(cliente)
+        }
+
+    }catch (erro){
+      res.status(400).send({message:`${erro.message} - ID do Cliente não Localizado`})
+    }
+  }
+
+
+
 //Cadastro Clientes
   static cadastrarClientes = async(req,res)=>{
       try {

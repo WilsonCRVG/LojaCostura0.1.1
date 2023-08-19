@@ -5,9 +5,12 @@ const router = express.Router();
 
 router
 .get('/servicos',servicosController.listarServicos)
+.get('/servicos/:id',servicosController.listarPorId)
+.get('/servicoData/:dataEntrega',servicosController.listarPorDataEntrega)
+
 .post('/servicos',servicosController.cadastrarServicos)
-//.put('/servicos/:id',servicosController.atualizaServicos)
-//.delete('/servicos/:id',servicosController.deletaServicos)
+.put('/servicos/:id',servicosController.atualizaServicos)
+.delete('/servicos/:id',servicosController.deletarServico)
 
 
 export default router;
